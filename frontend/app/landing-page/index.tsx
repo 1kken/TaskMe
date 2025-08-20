@@ -6,7 +6,7 @@ import { Footer } from "./footer"
 
 export default function TaskMeLanding() {
     return (
-        <div className="min-h-screen ">
+        <div className="min-h-screen py-1 ">
             <HeroSection />
             <FeaturesSection />
             <RolesSection />

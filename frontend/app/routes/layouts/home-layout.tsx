@@ -1,8 +1,9 @@
-import { Outlet } from "react-router";
+import {Outlet, useLocation} from "react-router";
 import NavBar from "~/components/layouts/home/nav-bar";
 
-export default function HomeLayout({ children }: { children: React.ReactNode }) {
-    const isAuthPage = window.location.pathname.includes("/login") || window.location.pathname.includes("/register");
+export default function HomeLayout() {
+    const location = useLocation();
+    const isAuthPage = location.pathname.includes("/login") || location.pathname.includes("/register");
 
     return (
         <>
