@@ -1,6 +1,13 @@
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "http://backend.test";
+const axiosInstance = axios.create({
+    baseURL: "http://backend.test", // your Laravel app
+    withCredentials: true,
+    withXSRFToken:true,
+    headers: {
+        "X-Requested-With": "XMLHttpRequest", // 🔑 required for Sanctum
+    },
+});
 
-export default axios;
+export default axiosInstance;
+

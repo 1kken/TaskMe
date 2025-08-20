@@ -1,6 +1,9 @@
 import axios from "~/lib/axios";
-import {redirect} from "react-router";
+import {redirect, useActionData, useNavigate} from "react-router";
 import RegisterForm from "~/auth/register-form";
+import axiosInstance from "~/lib/axios";
+import {useUserStore} from "~/lib/global-stores/user-store";
+import {useEffect} from "react";
 export async function action({ request }: { request: Request }) {
     const formData = await request.formData();
     const name = formData.get("name");;
@@ -8,13 +11,13 @@ export async function action({ request }: { request: Request }) {
     const password = formData.get("password");
     const password_confirmation = formData.get("password_confirmation");
     //initialize CSRF
-    await axios.get("/sanctum/csrf-cookie");
+    await axiosInstance.get("/sanctum/csrf-cookie");
 
     try {
-        const result = await axios.post("/api/register",
+        const result = await axiosInstance.post("/api/register",
             {email,password,password_confirmation,name});
         if(result.status === 200){
-            return redirect('/') ;
+            return {user : result.data.user}
         }
     }
     catch (e: any) {
@@ -26,5 +29,16 @@ export async function action({ request }: { request: Request }) {
 }
 
 export default function LoginPage() {
+    const data = useActionData<typeof action>();
+    const setUser = useUserStore((s) => s.setUser);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (data?.user) {
+            setUser(data.user);     // update global store
+            navigate("/");          // redirect after login
+        }
+    }, [data, setUser, navigate]);
+
     return <RegisterForm />;
 }
