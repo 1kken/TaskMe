@@ -17,5 +17,6 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
     />
   )
 }
-
+export interface InputProps
+    extends React.InputHTMLAttributes<HTMLInputElement> {}
 export { Input }

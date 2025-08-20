@@ -12,7 +12,7 @@ type ServerResponse = {
     errors?: Record<string, string[]>
 }
 
-export default function LoginForm({ className, ...props }: React.ComponentProps<"div">) {
+export default function RegisterForm({ className, ...props }: React.ComponentProps<"div">) {
     const actionData = useActionData() as ServerResponse | null
 
     // normalized errors for easy rendering
@@ -53,13 +53,27 @@ export default function LoginForm({ className, ...props }: React.ComponentProps<
                 <CardContent className="grid p-0 md:grid-cols-2 w-[900px]">
                     <Form method="post" className="p-6 md:p-8 flex flex-col gap-6">
                         <div className="flex flex-col items-center text-center">
-                            <h1 className="text-2xl font-bold">Welcome back</h1>
+                            <h1 className="text-2xl font-bold">Welcome</h1>
                             <p className="text-muted-foreground text-balance">
-                                Login to your TaskMe account
+                                Register to use TaskMe
                             </p>
                         </div>
 
-                        {generalError && <p className="text-red-500 text-xs text-center">{generalError}</p>}
+                        {generalError && <p className="text-red-500 text-center">{generalError}</p>}
+
+                        {/* name */}
+                        <div className="grid gap-3">
+                            <Label htmlFor="email">Name</Label>
+                            <Input
+                                id="name"
+                                name="name"
+                                type="name"
+                                placeholder="Juan De La Cruz"
+                                required
+                                onChange={handleChange}
+                            />
+                            {errors.name && <p className="text-red-500 text-xs">{errors.email}</p>}
+                        </div>
 
                         {/* Email */}
                         <div className="grid gap-3">
@@ -72,19 +86,13 @@ export default function LoginForm({ className, ...props }: React.ComponentProps<
                                 required
                                 onChange={handleChange}
                             />
-                            {errors.email && <p className="text-red-500">{errors.email}</p>}
+                            {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
                         </div>
 
                         {/* Password */}
                         <div className="grid gap-3">
                             <div className="flex items-center">
                                 <Label htmlFor="password">Password</Label>
-                                <NavLink
-                                    to="/auth/forgot-password"
-                                    className="ml-auto text-xs underline-offset-2 hover:underline"
-                                >
-                                    Forgot your password?
-                                </NavLink>
                             </div>
                             <PasswordInput
                                 id="password"
@@ -92,17 +100,29 @@ export default function LoginForm({ className, ...props }: React.ComponentProps<
                                 required
                                 onChange={handleChange}   // to clear errors per field
                             />
-                            {errors.password && <p className="text-red-500">{errors.password}</p>}
+                            {errors.password && <p className="text-red-500 text-xs">{errors.password}</p>}
+                        </div>
+                        {/* Password */}
+                        <div className="grid gap-3">
+                            <div className="flex items-center">
+                                <Label htmlFor="password">Confirm Password</Label>
+                            </div>
+                            <PasswordInput
+                                id="password_confirmation"
+                                name="password_confirmation"
+                                required
+                                onChange={handleChange}   // to clear errors per field
+                            />
                         </div>
 
                         <Button type="submit" className="w-full">
-                            Login
+                            Register
                         </Button>
 
                         <div className="text-center text-sm">
-                            Don&apos;t have an account?{" "}
-                            <NavLink to="/auth/register" className="underline underline-offset-4">
-                                Register
+                            Already have an account?{" "}
+                            <NavLink to="/auth/login" className="underline underline-offset-4">
+                                Login
                             </NavLink>
                         </div>
                     </Form>
