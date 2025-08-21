@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
-import { Form, NavLink, useActionData } from "react-router"
+import { Form, NavLink, useActionData, useNavigation } from "react-router"
 import { Input } from "~/components/ui/input"
 import { Label } from "~/components/ui/label"
 import { Button } from "~/components/ui/button"
 import { Card, CardContent } from "~/components/ui/card"
 import { cn } from "~/lib/utils"
-import {PasswordInput} from "~/components/ui/password-input";
+import { PasswordInput } from "~/components/ui/password-input"
 
 type ServerResponse = {
     message?: string
@@ -14,15 +14,15 @@ type ServerResponse = {
 
 export default function LoginForm({ className, ...props }: React.ComponentProps<"div">) {
     const actionData = useActionData() as ServerResponse | null
+    const navigation = useNavigation();
+    const isSubmitting = navigation.state === "submitting"
 
-    // normalized errors for easy rendering
     const [errors, setErrors] = useState<Record<string, string | undefined>>({})
     const [generalError, setGeneralError] = useState<string | null>(null)
 
     useEffect(() => {
         if (!actionData) return
 
-        // handle field-level errors
         if (actionData.errors) {
             const fieldErrors: Record<string, string> = {}
             Object.entries(actionData.errors).forEach(([field, messages]) => {
@@ -33,7 +33,6 @@ export default function LoginForm({ className, ...props }: React.ComponentProps<
             setErrors({})
         }
 
-        // handle general message
         if (actionData.message && !actionData.errors) {
             setGeneralError(actionData.message)
         } else {
@@ -90,18 +89,26 @@ export default function LoginForm({ className, ...props }: React.ComponentProps<
                                 id="password"
                                 name="password"
                                 required
-                                onChange={handleChange}   // to clear errors per field
+                                onChange={handleChange}
                             />
                             {errors.password && <p className="text-red-500">{errors.password}</p>}
                         </div>
 
-                        <Button type="submit" className="w-full">
-                            Login
+                        {/* Button with spinner */}
+                        <Button type="submit" className="w-full" disabled={isSubmitting}>
+                            {isSubmitting ? (
+                                <div className="flex items-center justify-center gap-2">
+                                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                                    Logging in...
+                                </div>
+                            ) : (
+                                "Login"
+                            )}
                         </Button>
 
                         <div className="text-center text-sm">
                             Don&apos;t have an account?{" "}
-                            <NavLink to="/auth/register" className="underline underline-offset-4">
+                            <NavLink to="/auth/register" className="underline underline-offset-4" >
                                 Register
                             </NavLink>
                         </div>

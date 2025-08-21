@@ -1,10 +1,17 @@
-import axios from "~/lib/axios";
 import {redirect, useActionData, useNavigate} from "react-router";
 import RegisterForm from "~/auth/register-form";
-import axiosInstance from "~/lib/axios";
 import {useUserStore} from "~/lib/global-stores/user-store";
 import {useEffect} from "react";
-export async function action({ request }: { request: Request }) {
+import {axiosInstance} from "~/lib/axios";
+import type {Route} from "./+types/login";
+import {preventAuthenticatedAuthRoute} from "~/lib/auth";
+
+export async function clientLoader({
+                                       params,
+                                   }: Route.ClientLoaderArgs) {
+    return await preventAuthenticatedAuthRoute();
+}
+export async function clientAction({ request }: { request: Request }) {
     const formData = await request.formData();
     const name = formData.get("name");;
     const email = formData.get("email");
@@ -29,7 +36,7 @@ export async function action({ request }: { request: Request }) {
 }
 
 export default function LoginPage() {
-    const data = useActionData<typeof action>();
+    const data = useActionData<typeof clientAction>();
     const setUser = useUserStore((s) => s.setUser);
     const navigate = useNavigate();
 

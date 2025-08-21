@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react"
-import { Form, NavLink, useActionData } from "react-router"
+import { Form, NavLink, useActionData, useNavigation } from "react-router"
 import { Input } from "~/components/ui/input"
 import { Label } from "~/components/ui/label"
 import { Button } from "~/components/ui/button"
 import { Card, CardContent } from "~/components/ui/card"
 import { cn } from "~/lib/utils"
-import {PasswordInput} from "~/components/ui/password-input";
+import { PasswordInput } from "~/components/ui/password-input"
 
 type ServerResponse = {
     message?: string
@@ -14,15 +14,15 @@ type ServerResponse = {
 
 export default function RegisterForm({ className, ...props }: React.ComponentProps<"div">) {
     const actionData = useActionData() as ServerResponse | null
+    const navigation = useNavigation()   // 👈 get navigation state
+    const isSubmitting = navigation.state === "submitting"
 
-    // normalized errors for easy rendering
     const [errors, setErrors] = useState<Record<string, string | undefined>>({})
     const [generalError, setGeneralError] = useState<string | null>(null)
 
     useEffect(() => {
         if (!actionData) return
 
-        // handle field-level errors
         if (actionData.errors) {
             const fieldErrors: Record<string, string> = {}
             Object.entries(actionData.errors).forEach(([field, messages]) => {
@@ -33,7 +33,6 @@ export default function RegisterForm({ className, ...props }: React.ComponentPro
             setErrors({})
         }
 
-        // handle general message
         if (actionData.message && !actionData.errors) {
             setGeneralError(actionData.message)
         } else {
@@ -61,18 +60,18 @@ export default function RegisterForm({ className, ...props }: React.ComponentPro
 
                         {generalError && <p className="text-red-500 text-center">{generalError}</p>}
 
-                        {/* name */}
+                        {/* Name */}
                         <div className="grid gap-3">
-                            <Label htmlFor="email">Name</Label>
+                            <Label htmlFor="name">Name</Label>
                             <Input
                                 id="name"
                                 name="name"
-                                type="name"
+                                type="text"
                                 placeholder="Juan De La Cruz"
                                 required
                                 onChange={handleChange}
                             />
-                            {errors.name && <p className="text-red-500 text-xs">{errors.email}</p>}
+                            {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
                         </div>
 
                         {/* Email */}
@@ -98,25 +97,37 @@ export default function RegisterForm({ className, ...props }: React.ComponentPro
                                 id="password"
                                 name="password"
                                 required
-                                onChange={handleChange}   // to clear errors per field
+                                onChange={handleChange}
                             />
                             {errors.password && <p className="text-red-500 text-xs">{errors.password}</p>}
                         </div>
-                        {/* Password */}
+
+                        {/* Confirm Password */}
                         <div className="grid gap-3">
                             <div className="flex items-center">
-                                <Label htmlFor="password">Confirm Password</Label>
+                                <Label htmlFor="password_confirmation">Confirm Password</Label>
                             </div>
                             <PasswordInput
                                 id="password_confirmation"
                                 name="password_confirmation"
                                 required
-                                onChange={handleChange}   // to clear errors per field
+                                onChange={handleChange}
                             />
+                            {errors.password_confirmation && (
+                                <p className="text-red-500 text-xs">{errors.password_confirmation}</p>
+                            )}
                         </div>
 
-                        <Button type="submit" className="w-full">
-                            Register
+                        {/* Submit button with spinner */}
+                        <Button type="submit" className="w-full" disabled={isSubmitting}>
+                            {isSubmitting ? (
+                                <div className="flex items-center justify-center gap-2">
+                                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                                    Registering...
+                                </div>
+                            ) : (
+                                "Register"
+                            )}
                         </Button>
 
                         <div className="text-center text-sm">

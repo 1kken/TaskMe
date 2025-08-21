@@ -1,30 +1,43 @@
-import { Button } from "~/components/ui/button";
-import { useSubmit } from "react-router";
-import { useUserStore } from "~/lib/global-stores/user-store";
+import { Button } from "~/components/ui/button"
+import { useSubmit, useNavigation } from "react-router"
+import { useUserStore } from "~/lib/global-stores/user-store"
 
 export default function LogoutButton() {
-    const submit = useSubmit();
-    const clearUser = useUserStore((state) => state.clearUser);
-    
+    const submit = useSubmit()
+    const navigation = useNavigation()
+    const clearUser = useUserStore((state) => state.clearUser)
+
+    const isLoggingOut =
+        navigation.state === "submitting" &&
+        navigation.formAction === "auth/logout"
+
     const handleLogout = () => {
         // Clear user state immediately for better UX
-        // The server will handle the actual logout
-        clearUser();
-        
+        clearUser()
+
         // Submit the logout form
-        submit(null, { 
-            method: "post", 
-            action: "auth/logout"
-        });
-    };
+        submit(null, {
+            method: "post",
+            action: "auth/logout",
+        })
+    }
 
     return (
         <Button
             variant="destructive"
             onClick={handleLogout}
+            disabled={isLoggingOut}
         >
-            Logout
+            {isLoggingOut ? (
+                <div className="flex items-center justify-center gap-2">
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
+                    Logging out...
+                </div>
+            ) : (
+                "Logout"
+            )}
         </Button>
-    );
+    )
 }
+
 

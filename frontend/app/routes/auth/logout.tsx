@@ -1,5 +1,5 @@
-import axiosInstance from "~/lib/axios";
 import { redirect } from "react-router";
+import {axiosInstance} from "~/lib/axios";
 export async function action() {
 
     try {
