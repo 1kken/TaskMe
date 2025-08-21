@@ -23,7 +23,7 @@ export function FeaturesSection() {
                     </Card>
                     <Card className="border-border hover:shadow-lg transition-shadow">
                         <CardHeader>
-                            <Users className="w-12 h-12 text-secondary mb-4" />
+                            <Users className="w-12 h-12 text-secondary mb-4 " color={"black"} />
                             <CardTitle className="font-heading">Team Collaboration</CardTitle>
                             <CardDescription>Real-time updates and seamless communication across all team levels</CardDescription>
                         </CardHeader>

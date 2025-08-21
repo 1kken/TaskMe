@@ -34,7 +34,7 @@ export function RolesSection() {
                         <CardHeader>
                             <div className="flex items-center space-x-3 mb-4">
                                 <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
-                                    <Users className="w-6 h-6 text-secondary" />
+                                    <Users className="w-6 h-6 text-secondary" color={"black"} />
                                 </div>
                                 <Badge variant="secondary">Organization Admin</Badge>
                             </div>
@@ -64,7 +64,7 @@ export function RolesSection() {
                         <CardHeader>
                             <div className="flex items-center space-x-3 mb-4">
                                 <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
-                                    <User className="w-6 h-6 text-secondary" />
+                                    <User className="w-6 h-6 text-secondary" color={"black"} />
                                 </div>
                                 <Badge variant="secondary">Team Member</Badge>
                             </div>
@@ -77,7 +77,7 @@ export function RolesSection() {
                         <CardHeader>
                             <div className="flex items-center space-x-3 mb-4">
                                 <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
-                                    <Eye className="w-6 h-6 text-accent" />
+                                    <Eye className="w-6 h-6 text-accent" color={"black"} />
                                 </div>
                                 <Badge variant="outline">Client</Badge>
                             </div>

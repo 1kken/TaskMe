@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b426fed-2a58-44ba-b37a-9214c89aeb30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/app/lib/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/.well-known/appspecific/com.chrome.devtools.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TaskMe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TaskMe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/auth/log-out-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/auth/log-out-button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/auth/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/auth/login-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/auth/register-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/auth/register-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/lib/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/lib/axios.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/lib/global-stores/user-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/lib/global-stores/user-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/auth/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/logout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/auth/logout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/auth/register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/landing-page/features-section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/landing-page/features-section.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/landing-page/roles-section.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/landing-page/roles-section.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +177,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1755782990659</updated>
-      <workItem from="1755782992347" duration="3176000" />
+      <workItem from="1755782992347" duration="4001000" />
     </task>
     <servers />
   </component>
