@@ -1,6 +1,6 @@
 import { redirect } from "react-router";
 import {axiosInstance} from "~/lib/axios";
-export async function action() {
+export async function clientAction() {
 
     try {
         const result = await axiosInstance.post("/api/logout");

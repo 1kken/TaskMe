@@ -9,10 +9,8 @@ export function isLoggedIn():boolean{
 export async function preventAuthenticatedAuthRoute() {
     try {
         const user = await axiosInstance.get("/api/user");
-        console.log("hit good");
         return redirect("/");
     } catch (e: any) {
-        console.log("hit");
     }
 }
 
