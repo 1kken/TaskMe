@@ -5,19 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b426fed-2a58-44ba-b37a-9214c89aeb30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-main.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-projects.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-user.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/sidebar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/routes/dashboard/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/routes/layouts/dashboard-components/nav-breadcrumb.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/routes/layouts/dashboard-layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/components/layouts/home/nav-bar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/layouts/home/nav-bar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/OrganizationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/OrganizationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Organization.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Organization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Policies/OrganizationPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Policies/OrganizationPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/factories/OrganizationFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/factories/OrganizationFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2025_08_22_092913_create_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2025_08_22_092913_create_tasks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2025_08_22_093003_task_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2025_08_23_133529_create_task_user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2025_08_22_105328_create_personal_access_tokens_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2025_08_22_105546_create_personal_access_tokens_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/dashboard/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +213,8 @@
       <workItem from="1755855846074" duration="140000" />
       <workItem from="1755857596061" duration="2915000" />
       <workItem from="1755860578357" duration="14000" />
-      <workItem from="1755868071345" duration="4118000" />
+      <workItem from="1755868071345" duration="4207000" />
+      <workItem from="1755949112805" duration="10171000" />
     </task>
     <servers />
   </component>

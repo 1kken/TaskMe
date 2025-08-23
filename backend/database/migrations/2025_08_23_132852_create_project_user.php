@@ -11,14 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+        Schema::create('project_user', function (Blueprint $table) {
+            $table->id();
+            //wont cascade deleted
+            $table->foreignUuid('user_id')
+                ->references('id')
+                ->on('users');
             $table->foreignUuid('project_id')
                 ->references('id')
                 ->on('projects')
                 ->onDelete('cascade');
-            $table->string('title');
-            $table->text('description');
+            $table->enum('role', ['project_manager','team_member','client'])
+                ->default('client');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tasks');
+        Schema::dropIfExists('project_user');
     }
 };

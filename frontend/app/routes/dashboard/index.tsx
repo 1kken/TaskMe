@@ -3,6 +3,17 @@ import {SidebarInset, SidebarProvider, SidebarTrigger} from "~/components/ui/sid
 import { Separator } from "~/components/ui/separator"
 import {AppSidebar} from "~/components/sidebar/sidebar";
 import NavBreadcrumb from "~/routes/layouts/dashboard-components/nav-breadcrumb";
+import type {Route} from "../../../.react-router/types/app/routes/auth/+types/login";
+import {preventAuthenticatedAuthRoute} from "~/lib/auth";
+import {axiosInstance} from "~/lib/axios";
+
+
+export async function clientLoader({
+                                       params,
+                                   }: Route.ClientLoaderArgs) {
+    const result = await axiosInstance.get('/api/organization')
+    console.log(result.data);
+}
 export default function Index(){
     return(
        <>

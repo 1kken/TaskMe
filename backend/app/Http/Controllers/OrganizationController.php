@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Organization;
 use App\Http\Requests\StoreOrganizationRequest;
 use App\Http\Requests\UpdateOrganizationRequest;
+use Illuminate\Support\Facades\Auth;
 
 class OrganizationController extends Controller
 {
@@ -13,47 +14,47 @@ class OrganizationController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $organizations = $user->organizations;
+        return response()->json(['organizations' => $organizations], 200);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(StoreOrganizationRequest $request)
     {
-        //
+        // validate
+        $validated = $request->validate([
+            'name' => 'required|unique:organizations|max:255',
+            'description' => 'required|unique:organizations|max:255',
+            ]);
+
+        //get user
+        $user = Auth::user();
+
+        //create organization and save org
+        $org = Organization::create($validated);
+
+        //create pivot table row
+        $org->users()->attach($user->id,['role'=>'organization_admin']);
+        return response()->json(['message' => 'Organization created','organization'=>$org],200);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Organization $organization)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Organization $organization)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateOrganizationRequest $request, Organization $organization)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|unique:organizations|max:255',
+            'description' => 'required|unique:organizations|max:255',
+        ]);
+        $organization->update($validated);
+
+        return response()->json(['message' => 'Organization updated','organization'=>$organization],200);
     }
 
     /**
@@ -61,6 +62,8 @@ class OrganizationController extends Controller
      */
     public function destroy(Organization $organization)
     {
-        //
+        $organization->users()->detach();
+        $organization->delete();
+        return response()->json(['message' => 'Organization deleted','organization'=>$organization],200);
     }
 }
