@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b426fed-2a58-44ba-b37a-9214c89aeb30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/app/lib/validation/auth/register-validation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-organization.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/sampledata.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/auth/register-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/auth/register-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/lib/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/lib/validation/auth/login-validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/lib/validation/auth/login-validation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/auth/login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/auth/login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/auth/register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/auth/register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-user.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/sidebar/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/sidebar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +28,7 @@
       <list>
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -155,7 +155,7 @@
     </include_path>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -169,26 +169,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Dev/TaskMe/backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Dev\\TaskMe\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Dev/TaskMe/frontend/app/components/sidebar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Dev\\TaskMe\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\TaskMe\frontend\app\components\sidebar" />
       <recent name="C:\Dev\TaskMe\backend" />
     </key>
   </component>
@@ -212,7 +213,7 @@
       <workItem from="1755860578357" duration="14000" />
       <workItem from="1755868071345" duration="4207000" />
       <workItem from="1755949112805" duration="10413000" />
-      <workItem from="1756025423872" duration="7753000" />
+      <workItem from="1756025423872" duration="11266000" />
     </task>
     <servers />
   </component>

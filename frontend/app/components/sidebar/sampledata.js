@@ -1,30 +1,3 @@
-"use client"
-
-import * as React from "react"
-import {
-    BookOpen,
-    Bot,
-    Command,
-    Frame,
-    Map,
-    PieChart,
-    Settings2,
-    SquareTerminal,
-} from "lucide-react"
-
-import { NavMain } from "./nav-main"
-import { NavProjects } from "./nav-projects"
-import { NavUser } from "./nav-user"
-import {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem,
-    SidebarRail,
-} from "~/components/ui/sidebar"
-import {NavLink} from "react-router";
-import {useUserStore} from "~/lib/global-stores/user-store";
-
 // This is sample data.
 const data = {
     user: {
@@ -136,36 +109,4 @@ const data = {
             icon: Map,
         },
     ],
-}
-
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-    const userStore = useUserStore((state) => state.user);
-    return (
-        <Sidebar collapsible="icon" {...props}>
-            <SidebarHeader>
-                <SidebarMenu>
-                    <SidebarMenuItem>
-                    <SidebarMenuButton size="lg" asChild>
-                        <NavLink to={'/'}>
-                            <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-                                <Command className="size-4" />
-                            </div>
-                            <div className="grid flex-1 text-left text-sm leading-tight">
-                                TaskMe℠
-                            </div>
-                        </NavLink>
-                    </SidebarMenuButton>
-                </SidebarMenuItem>
-            </SidebarMenu>
-            </SidebarHeader>
-            <SidebarContent>
-                <NavMain items={data.navMain} />
-                <NavProjects projects={data.projects} />
-            </SidebarContent>
-            <SidebarFooter>
-                <NavUser user={{name:userStore!.name,email:userStore!.email}} />
-            </SidebarFooter>
-            <SidebarRail />
-        </Sidebar>
-    )
 }
