@@ -6,11 +6,8 @@ import { Button } from "~/components/ui/button"
 import { Card, CardContent } from "~/components/ui/card"
 import { cn } from "~/lib/utils"
 import { PasswordInput } from "~/components/ui/password-input"
+import errorParser, {type ServerResponse} from "~/lib/validation/errorParser";
 
-type ServerResponse = {
-    message?: string
-    errors?: Record<string, string[]>
-}
 
 export default function LoginForm({ className, ...props }: React.ComponentProps<"div">) {
     const actionData = useActionData() as ServerResponse | null
@@ -23,20 +20,18 @@ export default function LoginForm({ className, ...props }: React.ComponentProps<
     useEffect(() => {
         if (!actionData) return
 
-        if (actionData.errors) {
-            const fieldErrors: Record<string, string> = {}
-            Object.entries(actionData.errors).forEach(([field, messages]) => {
-                fieldErrors[field] = Array.isArray(messages) ? messages[0] : String(messages)
-            })
-            setErrors(fieldErrors)
-        } else {
-            setErrors({})
+        const {parsedErrors,parsedMessage} = errorParser(actionData);
+
+        if(parsedMessage){
+            setGeneralError(parsedMessage)
+        }else{
+            setGeneralError(null);
         }
 
-        if (actionData.message && !actionData.errors) {
-            setGeneralError(actionData.message)
-        } else {
-            setGeneralError(null)
+        if(parsedErrors){
+            setErrors(parsedErrors)
+        }else{
+            setErrors({})
         }
     }, [actionData])
 
@@ -71,7 +66,7 @@ export default function LoginForm({ className, ...props }: React.ComponentProps<
                                 required
                                 onChange={handleChange}
                             />
-                            {errors.email && <p className="text-red-500">{errors.email}</p>}
+                            {errors.email && <p className="text-red-500 text-xs">{errors.email}</p>}
                         </div>
 
                         {/* Password */}
@@ -91,7 +86,7 @@ export default function LoginForm({ className, ...props }: React.ComponentProps<
                                 required
                                 onChange={handleChange}
                             />
-                            {errors.password && <p className="text-red-500">{errors.password}</p>}
+                            {errors.password && <p className="text-red-500 text-xs">{errors.password}</p>}
                         </div>
 
                         {/* Button with spinner */}
