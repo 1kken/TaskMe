@@ -6,6 +6,7 @@ import { Button } from "~/components/ui/button"
 import { Card, CardContent } from "~/components/ui/card"
 import { cn } from "~/lib/utils"
 import { PasswordInput } from "~/components/ui/password-input"
+import errorParser from "~/lib/validation/errorParser";
 
 type ServerResponse = {
     message?: string
@@ -23,20 +24,18 @@ export default function RegisterForm({ className, ...props }: React.ComponentPro
     useEffect(() => {
         if (!actionData) return
 
-        if (actionData.errors) {
-            const fieldErrors: Record<string, string> = {}
-            Object.entries(actionData.errors).forEach(([field, messages]) => {
-                fieldErrors[field] = Array.isArray(messages) ? messages[0] : String(messages)
-            })
-            setErrors(fieldErrors)
-        } else {
-            setErrors({})
+        const {parsedErrors,parsedMessage} = errorParser(actionData);
+
+        if(parsedMessage){
+            setGeneralError(parsedMessage)
+        }else{
+            setGeneralError(null);
         }
 
-        if (actionData.message && !actionData.errors) {
-            setGeneralError(actionData.message)
-        } else {
-            setGeneralError(null)
+        if(parsedErrors){
+            setErrors(parsedErrors)
+        }else{
+            setErrors({})
         }
     }, [actionData])
 

@@ -11,6 +11,10 @@ export async function preventAuthenticatedAuthRoute() {
         const user = await axiosInstance.get("/api/user");
         return redirect("/");
     } catch (e: any) {
+
+    }finally
+    {
+        console.clear()
     }
 }
 

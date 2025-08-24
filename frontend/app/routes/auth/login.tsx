@@ -21,6 +21,7 @@ export async function clientAction({request}: { request: Request }) {
 
 
     try {
+        //zod validation
         LoginValidation.parse({email, password})
 
         //server request
