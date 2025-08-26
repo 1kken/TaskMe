@@ -43,11 +43,7 @@ class OrganizationController extends Controller
      */
     public function update(UpdateOrganizationRequest $request, Organization $organization)
     {
-        $validated = $request->validate([
-            'name' => 'required|unique:mockOrganizations|max:255',
-            'description' => 'required|unique:mockOrganizations|max:255',
-        ]);
-        $organization->update($validated);
+        $organization->update($request->validated());
 
         return response()->json(['message' => 'Organization updated','organization'=>$organization],200);
     }
@@ -57,7 +53,6 @@ class OrganizationController extends Controller
      */
     public function destroy(Organization $organization)
     {
-        $organization->users()->detach();
         $organization->delete();
         return response()->json(['message' => 'Organization deleted','organization'=>$organization],200);
     }

@@ -5,7 +5,7 @@ import {
     Forward,
     MoreHorizontal,
     Trash2,
-    type LucideIcon, Plus,
+    type LucideIcon, Plus, Pencil,
 } from "lucide-react"
 
 import {
@@ -26,9 +26,9 @@ import {
 } from "~/components/ui/sidebar"
 import {useOrganizationsStore} from "~/lib/dashboard-store/organizations-store";
 import {ScrollArea} from "~/components/ui/scroll-area";
-import {Button} from "~/components/ui/button";
 import {Separator} from "@radix-ui/react-menu";
-import CreateModalOrganization from "~/components/modals/organization/create-modal-organization";
+import UpsertModalOrganization from "~/components/modals/organization/upsert-modal-organization";
+import {DeleteModal} from "~/components/modals/delete-modal";
 
 
 export function NavOrganization() {
@@ -39,7 +39,7 @@ export function NavOrganization() {
         <><SidebarGroup className="group-data-[collapsible=icon]:hidden">
             <SidebarGroupLabel className="flex items-center justify-between">
                 Organizations
-                <CreateModalOrganization/>
+                <UpsertModalOrganization update={false}/>
             </SidebarGroupLabel>
             <SidebarMenu>
                 <ScrollArea className="max-h-[200px]">
@@ -62,18 +62,25 @@ export function NavOrganization() {
                                     side={isMobile ? "bottom" : "right"}
                                     align={isMobile ? "end" : "start"}
                                 >
-                                    <DropdownMenuItem>
-                                        <Folder className="text-muted-foreground"/>
-                                        <span>View Organization</span>
+                                    <DropdownMenuItem asChild>
+                                        <UpsertModalOrganization update={true} organization={item}/>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem>
                                         <Forward className="text-muted-foreground"/>
                                         <span>Share Organization</span>
                                     </DropdownMenuItem>
                                     <DropdownMenuSeparator/>
-                                    <DropdownMenuItem>
-                                        <Trash2 className="text-muted-foreground"/>
-                                        <span>Delete Organization</span>
+                                    <DropdownMenuItem asChild>
+                                        <DeleteModal trigger={
+                                            <div
+                                                className="flex items-center text-sm gap-2 cursor-pointer p-2 hover:bg-gray-100 rounded-lg">
+                                                <Trash2 size={12} className="text-muted-foreground"/>
+                                                <span>Delete Organization</span>
+                                            </div>
+                                        }
+                                                     id={item.id} url="api/organization"
+                                                     title="Delete Organization"
+                                                     description={`Are you sure to delete ${item.name} organization`}/>
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
