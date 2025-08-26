@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b426fed-2a58-44ba-b37a-9214c89aeb30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-organization.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/sampledata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/components/hydration/hydrate-fallback-ui.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/components/modals/organization/create-modal-organization.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/components/ui/LoadingSpinner.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/lib/dashboard-store/mock-organizations.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/lib/dashboard-store/organizations-store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-user.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/OrganizationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/OrganizationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Requests/StoreOrganizationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Requests/StoreOrganizationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Organization.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Organization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Policies/OrganizationPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Policies/OrganizationPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2025_08_22_092602_create_organizations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2025_08_22_092602_create_organizations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-organization.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-organization.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/components/sidebar/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/dashboard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +39,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -177,18 +190,20 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Dev/TaskMe/frontend/app/components/sidebar",
+    "last_opened_file_path": "C:/Dev/TaskMe/frontend/app/lib/dashboard-store",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode.DB2",
     "ts.external.directory.path": "C:\\Dev\\TaskMe\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\TaskMe\frontend\app\lib\dashboard-store" />
       <recent name="C:\Dev\TaskMe\frontend\app\components\sidebar" />
       <recent name="C:\Dev\TaskMe\backend" />
     </key>
@@ -214,6 +229,9 @@
       <workItem from="1755868071345" duration="4207000" />
       <workItem from="1755949112805" duration="10413000" />
       <workItem from="1756025423872" duration="11266000" />
+      <workItem from="1756099279208" duration="13431000" />
+      <workItem from="1756128931796" duration="910000" />
+      <workItem from="1756202972049" duration="7390000" />
     </task>
     <servers />
   </component>

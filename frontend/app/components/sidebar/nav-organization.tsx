@@ -5,7 +5,7 @@ import {
     Forward,
     MoreHorizontal,
     Trash2,
-    type LucideIcon,
+    type LucideIcon, Plus,
 } from "lucide-react"
 
 import {
@@ -24,66 +24,65 @@ import {
     SidebarMenuItem,
     useSidebar,
 } from "~/components/ui/sidebar"
+import {useOrganizationsStore} from "~/lib/dashboard-store/organizations-store";
+import {ScrollArea} from "~/components/ui/scroll-area";
+import {Button} from "~/components/ui/button";
+import {Separator} from "@radix-ui/react-menu";
+import CreateModalOrganization from "~/components/modals/organization/create-modal-organization";
 
-export function NavProjects({
-                                organizations,
-                            }: {
-    organizations: {
-        name: string
-        url: string
-        icon: LucideIcon
-    }[]
-}) {
-    const { isMobile } = useSidebar()
+
+export function NavOrganization() {
+    const organizations = useOrganizationsStore(state => state.organizations)
+    const {isMobile} = useSidebar()
 
     return (
-        <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+        <><SidebarGroup className="group-data-[collapsible=icon]:hidden">
+            <SidebarGroupLabel className="flex items-center justify-between">
+                Organizations
+                <CreateModalOrganization/>
+            </SidebarGroupLabel>
             <SidebarMenu>
-                {organizations.map((item) => (
-                    <SidebarMenuItem key={item.name}>
-                        <SidebarMenuButton asChild>
-                            <a href={item.url}>
-                                <item.icon />
-                                <span>{item.name}</span>
-                            </a>
-                        </SidebarMenuButton>
-                        <DropdownMenu>
-                            <DropdownMenuTrigger asChild>
-                                <SidebarMenuAction showOnHover>
-                                    <MoreHorizontal />
-                                    <span className="sr-only">More</span>
-                                </SidebarMenuAction>
-                            </DropdownMenuTrigger>
-                            <DropdownMenuContent
-                                className="w-48 rounded-lg"
-                                side={isMobile ? "bottom" : "right"}
-                                align={isMobile ? "end" : "start"}
-                            >
-                                <DropdownMenuItem>
-                                    <Folder className="text-muted-foreground" />
-                                    <span>View Project</span>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem>
-                                    <Forward className="text-muted-foreground" />
-                                    <span>Share Project</span>
-                                </DropdownMenuItem>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem>
-                                    <Trash2 className="text-muted-foreground" />
-                                    <span>Delete Project</span>
-                                </DropdownMenuItem>
-                            </DropdownMenuContent>
-                        </DropdownMenu>
-                    </SidebarMenuItem>
-                ))}
-                <SidebarMenuItem>
-                    <SidebarMenuButton className="text-sidebar-foreground/70">
-                        <MoreHorizontal className="text-sidebar-foreground/70" />
-                        <span>More</span>
-                    </SidebarMenuButton>
-                </SidebarMenuItem>
+                <ScrollArea className="max-h-[200px]">
+                    {organizations.map((item) => (
+                        <SidebarMenuItem key={item.name}>
+                            <SidebarMenuButton asChild>
+                                <a href="#">
+                                    <span>{item.name}</span>
+                                </a>
+                            </SidebarMenuButton>
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <SidebarMenuAction showOnHover>
+                                        <MoreHorizontal/>
+                                        <span className="sr-only">More</span>
+                                    </SidebarMenuAction>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent
+                                    className="w-48 rounded-lg"
+                                    side={isMobile ? "bottom" : "right"}
+                                    align={isMobile ? "end" : "start"}
+                                >
+                                    <DropdownMenuItem>
+                                        <Folder className="text-muted-foreground"/>
+                                        <span>View Organization</span>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem>
+                                        <Forward className="text-muted-foreground"/>
+                                        <span>Share Organization</span>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuSeparator/>
+                                    <DropdownMenuItem>
+                                        <Trash2 className="text-muted-foreground"/>
+                                        <span>Delete Organization</span>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+                        </SidebarMenuItem>
+                    ))}
+                </ScrollArea>
             </SidebarMenu>
         </SidebarGroup>
+            <Separator/>
+        </>
     )
 }

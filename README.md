@@ -6,7 +6,7 @@
 
 ## Overview
 
-TaskMe is a web-based task and project management application designed to help organizations manage projects, tasks, and team members efficiently while enforcing role-based access control. The system ensures that each user sees and interacts only with the data they are allowed to access.
+TaskMe is a web-based task and project management application designed to help mockOrganizations manage projects, tasks, and team members efficiently while enforcing role-based access control. The system ensures that each user sees and interacts only with the data they are allowed to access.
 
 ---
 
@@ -27,8 +27,8 @@ TaskMe is a web-based task and project management application designed to help o
     - Role-based access using Spatie Laravel-Permission
 
 - **Organization & Project Management:**
-    - Admins create organizations and projects
-    - Users can belong to multiple organizations
+    - Admins create mockOrganizations and projects
+    - Users can belong to multiple mockOrganizations
 
 - **Task Management:**
     - Project Managers create and assign tasks

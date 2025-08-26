@@ -24,6 +24,7 @@ import {
 } from "~/components/ui/sidebar"
 import {NavLink} from "react-router";
 import {useUserStore} from "~/lib/global-stores/user-store";
+import {NavOrganization} from "~/components/sidebar/nav-organization";
 
 // This is sample data.
 const data = {
@@ -119,23 +120,6 @@ const data = {
             ],
         },
     ],
-    projects: [
-        {
-            name: "Design Engineering",
-            url: "#",
-            icon: Frame,
-        },
-        {
-            name: "Sales & Marketing",
-            url: "#",
-            icon: PieChart,
-        },
-        {
-            name: "Travel",
-            url: "#",
-            icon: Map,
-        },
-    ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -159,8 +143,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenu>
             </SidebarHeader>
             <SidebarContent>
-                <NavMain items={data.navMain} />
-                <NavProjects projects={data.projects} />
+                <NavOrganization/>
+               {/*<NavCollapsibleOrganization/>*/}
+                {/*<NavMain items={data.navMain} />*/}
             </SidebarContent>
             <SidebarFooter>
                 <NavUser user={{name:userStore!.name,email:userStore!.email}} />

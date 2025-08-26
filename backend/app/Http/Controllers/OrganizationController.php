@@ -6,6 +6,7 @@ use App\Models\Organization;
 use App\Http\Requests\StoreOrganizationRequest;
 use App\Http\Requests\UpdateOrganizationRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class OrganizationController extends Controller
 {
@@ -25,17 +26,11 @@ class OrganizationController extends Controller
      */
     public function store(StoreOrganizationRequest $request)
     {
-        // validate
-        $validated = $request->validate([
-            'name' => 'required|unique:organizations|max:255',
-            'description' => 'required|unique:organizations|max:255',
-            ]);
-
         //get user
         $user = Auth::user();
 
         //create organization and save org
-        $org = Organization::create($validated);
+        $org = Organization::create($request->validated());
 
         //create pivot table row
         $org->users()->attach($user->id,['role'=>'organization_admin']);
@@ -49,8 +44,8 @@ class OrganizationController extends Controller
     public function update(UpdateOrganizationRequest $request, Organization $organization)
     {
         $validated = $request->validate([
-            'name' => 'required|unique:organizations|max:255',
-            'description' => 'required|unique:organizations|max:255',
+            'name' => 'required|unique:mockOrganizations|max:255',
+            'description' => 'required|unique:mockOrganizations|max:255',
         ]);
         $organization->update($validated);
 

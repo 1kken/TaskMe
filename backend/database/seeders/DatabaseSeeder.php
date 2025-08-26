@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'org2@test.com',
         ]);
 
-        // Create organizations
+        // Create mockOrganizations
         $org1 = Organization::factory()->create([
             'name' => 'Org 1',
         ]);
@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
 
         // Attach users as organization_admin in pivot
         $org1->users()->attach($org1User->id, ['role' => 'organization_admin']);
+
         $org2->users()->attach($org2User->id, ['role' => 'organization_admin']);
     }
 }
