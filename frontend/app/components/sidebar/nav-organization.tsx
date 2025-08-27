@@ -48,7 +48,7 @@ export function NavOrganization() {
                     {organizations.map((item) => (
                         <SidebarMenuItem key={item.name}>
                             <SidebarMenuButton asChild>
-                                <Link to={`/dashboard/organization/${item.id}`}>
+                                <Link  to={`/dashboard/organization/${item.slug}`}>
                                     <span>{item.name}</span>
                                 </Link>
                             </SidebarMenuButton>

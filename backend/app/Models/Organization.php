@@ -12,7 +12,7 @@ class Organization extends Model
     /** @use HasFactory<\Database\Factories\OrganizationFactory> */
     use HasUuids,HasFactory;
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description','slug'];
 
     public function projects(): BelongsToMany{
         return $this->belongsToMany(Project::class, 'organization_project', 'organization_id', 'project_id');

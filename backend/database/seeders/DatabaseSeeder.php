@@ -26,10 +26,12 @@ class DatabaseSeeder extends Seeder
         // Create mockOrganizations
         $org1 = Organization::factory()->create([
             'name' => 'Org 1',
+            'slug' => 'org1',
         ]);
 
         $org2 = Organization::factory()->create([
             'name' => 'Org 2',
+            'slug' => 'org2',
         ]);
 
         // Attach users as organization_admin in pivot

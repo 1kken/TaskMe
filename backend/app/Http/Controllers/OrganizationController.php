@@ -7,7 +7,7 @@ use App\Http\Requests\StoreOrganizationRequest;
 use App\Http\Requests\UpdateOrganizationRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class OrganizationController extends Controller
 {
@@ -30,8 +30,13 @@ class OrganizationController extends Controller
         //get user
         $user = Auth::user();
 
+
+        //set slug
+        $data = $request->validated();
+        $data['slug'] = $this->generateUniqueSlug($data['name']);
+
         //create organization and save organization
-        $org = Organization::create($request->validated());
+        $org = Organization::create($data);
 
         //create pivot table row
         $org->users()->attach($user->id,['role'=>'organization_admin']);
@@ -45,7 +50,13 @@ class OrganizationController extends Controller
     public function update(UpdateOrganizationRequest $request, Organization $organization)
     {
         Gate::authorize('update', $organization);
-        $organization->update($request->validated());
+
+        //set slug
+        $data = $request->validated();
+        if($organization->name !== $request->name){
+            $data['slug'] = $this->generateUniqueSlug($data['name']);
+        }
+        $organization->update($data);
 
         return response()->json(['message' => 'Organization updated','organization'=>$organization],200);
     }
@@ -58,5 +69,19 @@ class OrganizationController extends Controller
         Gate::authorize('forceDelete', $organization);
         $organization->delete();
         return response()->json(['message' => 'Organization deleted','organization'=>$organization],200);
+    }
+
+    function generateUniqueSlug($name)
+    {
+        $slug = Str::slug($name);
+        $originalSlug = $slug;
+        $counter = 1;
+
+        // Keep incrementing until it's unique
+        while (Organization::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $counter++;
+        }
+
+        return $slug;
     }
 }

@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b426fed-2a58-44ba-b37a-9214c89aeb30" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/OrganizationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/OrganizationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Requests/StoreOrganizationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Requests/StoreOrganizationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Models/Organization.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Organization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2025_08_22_092602_create_organizations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2025_08_22_092602_create_organizations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2025_08_27_074819_create_organization_invites_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2025_08_27_074819_create_organization_invites_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-organization.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-organization.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/lib/dashboard-store/organizations-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/lib/dashboard-store/organizations-store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/dashboard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/dashboard/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/routes/dashboard/organization/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/dashboard/organization/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/routes/layouts/dashboard-layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes/layouts/dashboard-layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +227,7 @@
       <workItem from="1756202972049" duration="16667000" />
       <workItem from="1756263741238" duration="1514000" />
       <workItem from="1756278264897" duration="4116000" />
-      <workItem from="1756293804795" duration="6938000" />
+      <workItem from="1756293804795" duration="8875000" />
     </task>
     <servers />
   </component>

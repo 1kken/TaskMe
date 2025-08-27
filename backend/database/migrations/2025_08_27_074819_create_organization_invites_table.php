@@ -15,7 +15,8 @@ return new class extends Migration {
             $table->uuid('id')->primary();
             $table->foreignUuid('organization_id')
                 ->references('id')
-                ->on('organizations');
+                ->on('organizations')
+                ->onDelete('cascade');
             $table->dateTime('claimed_at')->nullable();
             $table->dateTime('expires_at')->nullable();
             $table->timestamps();

@@ -4,7 +4,6 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\OrganizationInviteController;
-use App\Models\OrganizationInvite;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -23,8 +22,15 @@ Route::controller(OrganizationInviteController::class)->group(function () {
     Route::post('/organization/invite', 'create');
 });
 
-Route::resource('/organization', OrganizationController::class)
-    ->except(['edit', 'show', 'create'])
-    ->middleware('auth:sanctum');
 
+Route::controller(OrganizationController::class)
+    ->prefix('organization')
+    ->middleware('auth:sanctum')
+    ->group(function () {
+        Route::get('/', 'index');
+        Route::post('/', 'store');
+        Route::get('{organization:slug}', 'show');
+        Route::put('{organization}', 'update');
+        Route::delete('{organization}', 'destroy');
+    });
 

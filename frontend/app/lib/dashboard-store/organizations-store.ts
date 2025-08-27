@@ -4,6 +4,7 @@ import {axiosInstance} from "~/lib/axios";
 
 export interface Organization{
     id:string,
+    slug:string,
     name:string,
     description:string,
     created_at:string,
