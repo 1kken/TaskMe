@@ -123,6 +123,8 @@
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/backend/vendor/_laravel_idea" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/frontend/.react-router" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

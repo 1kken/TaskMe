@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b426fed-2a58-44ba-b37a-9214c89aeb30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/app/routes/dashboard/organization/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TaskMe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TaskMe.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -219,7 +218,7 @@
       <workItem from="1756202972049" duration="16667000" />
       <workItem from="1756263741238" duration="1514000" />
       <workItem from="1756278264897" duration="4116000" />
-      <workItem from="1756293804795" duration="6227000" />
+      <workItem from="1756293804795" duration="6380000" />
     </task>
     <servers />
   </component>
