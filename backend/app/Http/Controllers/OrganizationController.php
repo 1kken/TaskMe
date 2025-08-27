@@ -6,6 +6,7 @@ use App\Models\Organization;
 use App\Http\Requests\StoreOrganizationRequest;
 use App\Http\Requests\UpdateOrganizationRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 
 class OrganizationController extends Controller
@@ -29,7 +30,7 @@ class OrganizationController extends Controller
         //get user
         $user = Auth::user();
 
-        //create organization and save org
+        //create organization and save organization
         $org = Organization::create($request->validated());
 
         //create pivot table row
@@ -43,6 +44,7 @@ class OrganizationController extends Controller
      */
     public function update(UpdateOrganizationRequest $request, Organization $organization)
     {
+        Gate::authorize('update', $organization);
         $organization->update($request->validated());
 
         return response()->json(['message' => 'Organization updated','organization'=>$organization],200);
@@ -53,6 +55,7 @@ class OrganizationController extends Controller
      */
     public function destroy(Organization $organization)
     {
+        Gate::authorize('forceDelete', $organization);
         $organization->delete();
         return response()->json(['message' => 'Organization deleted','organization'=>$organization],200);
     }

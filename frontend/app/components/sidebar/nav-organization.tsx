@@ -29,6 +29,7 @@ import {ScrollArea} from "~/components/ui/scroll-area";
 import {Separator} from "@radix-ui/react-menu";
 import UpsertModalOrganization from "~/components/modals/organization/upsert-modal-organization";
 import {DeleteModal} from "~/components/modals/delete-modal";
+import {InviteLinkModal} from "~/components/modals/organization/invite-link-modal";
 
 
 export function NavOrganization() {
@@ -65,9 +66,8 @@ export function NavOrganization() {
                                     <DropdownMenuItem asChild>
                                         <UpsertModalOrganization update={true} organization={item}/>
                                     </DropdownMenuItem>
-                                    <DropdownMenuItem>
-                                        <Forward className="text-muted-foreground"/>
-                                        <span>Share Organization</span>
+                                    <DropdownMenuItem asChild>
+                                        <InviteLinkModal organization_id={item.id}/>
                                     </DropdownMenuItem>
                                     <DropdownMenuSeparator/>
                                     <DropdownMenuItem asChild>
