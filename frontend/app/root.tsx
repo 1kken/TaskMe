@@ -1,10 +1,10 @@
 import {
-  isRouteErrorResponse,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
+    isRouteErrorResponse,
+    Links,
+    Meta,
+    Outlet,
+    Scripts,
+    ScrollRestoration, useNavigate,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -52,6 +52,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let details = "An unexpected error occurred.";
   let stack: string | undefined;
 
+    if (isRouteErrorResponse(error)) {
+        if(error.status === 401){
+            useNavigate()('/')
+        }
+    }
   if (isRouteErrorResponse(error)) {
     message = error.status === 404 ? "404" : "Error";
     details =

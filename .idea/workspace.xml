@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b426fed-2a58-44ba-b37a-9214c89aeb30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/app/components/modals/delete-modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/log-out-button-profile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/OrganizationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/OrganizationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Requests/UpdateOrganizationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Requests/UpdateOrganizationRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/components/modals/organization/create-modal-organization.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/modals/organization/upsert-modal-organization.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-organization.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-organization.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/components/sidebar/nav-user.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/app/root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/root.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +153,7 @@
     </include_path>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -172,25 +167,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Dev/TaskMe/frontend/app/lib/dashboard-store",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.DB2",
-    "ts.external.directory.path": "C:\\Dev\\TaskMe\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Dev/TaskMe/frontend/app/lib/dashboard-store&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.DB2&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Dev\\TaskMe\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Dev\TaskMe\frontend\app\lib\dashboard-store" />
@@ -221,7 +216,8 @@
       <workItem from="1756025423872" duration="11266000" />
       <workItem from="1756099279208" duration="13431000" />
       <workItem from="1756128931796" duration="910000" />
-      <workItem from="1756202972049" duration="15168000" />
+      <workItem from="1756202972049" duration="16667000" />
+      <workItem from="1756263741238" duration="1514000" />
     </task>
     <servers />
   </component>
