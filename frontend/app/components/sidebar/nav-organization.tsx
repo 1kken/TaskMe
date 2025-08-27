@@ -30,6 +30,7 @@ import {Separator} from "@radix-ui/react-menu";
 import UpsertModalOrganization from "~/components/modals/organization/upsert-modal-organization";
 import {DeleteModal} from "~/components/modals/delete-modal";
 import {InviteLinkModal} from "~/components/modals/organization/invite-link-modal";
+import {Link} from "react-router";
 
 
 export function NavOrganization() {
@@ -47,9 +48,9 @@ export function NavOrganization() {
                     {organizations.map((item) => (
                         <SidebarMenuItem key={item.name}>
                             <SidebarMenuButton asChild>
-                                <a href="#">
+                                <Link to={`/dashboard/organization/${item.id}`}>
                                     <span>{item.name}</span>
-                                </a>
+                                </Link>
                             </SidebarMenuButton>
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
